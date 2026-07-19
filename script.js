@@ -113,14 +113,6 @@
     });
   }
 
-  /* ===== Expandable scent menu cards ===== */
-  document.querySelectorAll('.scent-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var card = btn.closest('.scent');
-      if (card) card.classList.toggle('open');
-    });
-  });
-
   /* ===== Check date availability (hero micro-form) ===== */
   var availBtn = document.getElementById('avail-btn');
   var availDate = document.getElementById('avail-date');
@@ -305,16 +297,16 @@
     var prevDateText = d;
 
     layoutNameLabel(heroNames, heroDate, heroDateText, heroText, {
-      maxWidth: 54, startSize: 15, twoLineStartSize: 13, minSize: 7.5,
-      singleY: 234, twoLineY: 228, lineGap: 13,
-      dateYSingle: 250, dateYTwo: 258,
-      dateMaxWidth: 50, dateStartSize: 9, dateMinSize: 6, dateStartSpacing: 1.5, dateMinSpacing: 0.2
+      maxWidth: 56, startSize: 15, twoLineStartSize: 13, minSize: 7,
+      singleY: 231, twoLineY: 222, lineGap: 14,
+      dateYSingle: 250, dateYTwo: 259,
+      dateMaxWidth: 54, dateStartSize: 9, dateMinSize: 6, dateStartSpacing: 1.5, dateMinSpacing: 0.2
     });
     layoutNameLabel(prevNames, prevDate, prevDateText, prevText, {
-      maxWidth: 66, startSize: 14, twoLineStartSize: 12, minSize: 7.5,
-      singleY: 190, twoLineY: 184, lineGap: 12,
-      dateYSingle: 207, dateYTwo: 216,
-      dateMaxWidth: 62, dateStartSize: 9, dateMinSize: 6, dateStartSpacing: 1.5, dateMinSpacing: 0.2
+      maxWidth: 68, startSize: 14, twoLineStartSize: 12, minSize: 7,
+      singleY: 188, twoLineY: 180, lineGap: 12,
+      dateYSingle: 206, dateYTwo: 220,
+      dateMaxWidth: 68, dateStartSize: 9, dateMinSize: 6, dateStartSpacing: 1.5, dateMinSpacing: 0.2
     });
   }
   namesInput.addEventListener('input', updatePreview);
@@ -445,7 +437,7 @@
 
   /* ===== Scroll reveal ===== */
   var revealTargets = document.querySelectorAll(
-    '.section-head, .counter-item, .swatch, .pkg-card, .bottle-card, .process-item, .menu-board, .preview-panel, .addons-panel'
+    '.section-head, .counter-item, .swatch, .pkg-card, .flagship-card, .process-item, .menu-board, .preview-panel, .addons-panel'
   );
   revealTargets.forEach(function (el) { el.classList.add('reveal'); });
 

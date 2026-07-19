@@ -20,7 +20,7 @@
       <div class="logo"><span class="mark">✦</span> Lindor Parfum</div>
       <nav class="links">
         <a href="#experience">Experience</a>
-        <a href="#bottles">Bottles</a>
+        <a href="#flagship">Flagship</a>
         <a href="#packages">Packages</a>
         <a href="#scents">Scents</a>
         <a href="#process">Booking</a>
@@ -37,7 +37,7 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav">
       <a href="#experience">Experience</a>
-      <a href="#bottles">Bottles</a>
+      <a href="#flagship">Flagship</a>
       <a href="#packages">Packages</a>
       <a href="#scents">Scents</a>
       <a href="#process">Booking</a>
@@ -54,7 +54,7 @@
           fragrance decanted and foil-labelled with your names and date, on the spot.</p>
         <div class="cta-row">
           <a class="btn-primary" href="#book">Reserve Your Date</a>
-          <a class="btn-ghost" href="#bottles">View Our Bottle Collection</a>
+          <a class="btn-ghost" href="#flagship">View The Flagship Bottles</a>
         </div>
         <div class="avail-check">
           <p class="avail-label">Check Date Availability</p>
@@ -113,14 +113,14 @@
 
           <!-- Foil Label Layer -->
           <g class="label-rise">
-            <rect x="66" y="180" width="68" height="84" fill="#020617" stroke="url(#gold-grad)" stroke-width="1.5" />
-            <rect x="71" y="185" width="58" height="74" fill="none" stroke="#a8842a" stroke-width="0.75" />
-            <text x="100" y="206" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
+            <rect x="64" y="178" width="72" height="94" fill="#020617" stroke="url(#gold-grad)" stroke-width="1.5" />
+            <rect x="69" y="183" width="62" height="84" fill="none" stroke="#a8842a" stroke-width="0.75" />
+            <text x="100" y="203" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
               letter-spacing="2">LINDOR</text>
-            <line x1="78" y1="216" x2="122" y2="216" stroke="#a8842a" stroke-width="0.6" />
-            <text id="hero-names" x="100" y="234" text-anchor="middle" class="foil-names" font-size="15"
-              fill="#F8F5F0">Gabby &amp; Katie</text>
-            <text id="hero-date" x="100" y="250" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
+            <line x1="76" y1="213" x2="124" y2="213" stroke="#a8842a" stroke-width="0.6" />
+            <text id="hero-names" x="100" y="231" text-anchor="middle" class="foil-names" font-size="15"
+              fill="#F8F5F0">Gabriel &amp; Sofia</text>
+            <text id="hero-date" x="100" y="257" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
               letter-spacing="1.5">10 . 24 . 2026</text>
           </g>
         </svg>
@@ -177,50 +177,157 @@
     </div>
   </section>
 
-  <section class="bottles" id="bottles">
+  <section class="flagship" id="flagship">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">The Flagship Bottles</p>
-        <h2>Two silhouettes, one standard of finish.</h2>
-        <p>Every bottle in the collection is heavy-walled clear glass, capped in polished metallic gold, and dressed
-          in your custom foil label.</p>
+        <h2>Six signature pours, one polished finish.</h2>
+        <p>Our most-requested scents from the bar, decanted into heavy-walled glass and capped in polished metallic
+          gold. Every bottle leaves the counter dressed in your custom foil label.</p>
       </div>
-      <div class="bottle-grid">
-        <div class="bottle-card">
-          <div class="bottle-card-head">
-            <h3>The Parisian Classic</h3>
-            <span class="ml-tag">30ml</span>
+
+      <!-- To feature your own product photography, replace the src attribute on each
+           .flagship-photo image below (e.g. images/flagship-01.jpg). Until then, an
+           elegant placeholder is shown automatically. -->
+      <div class="flagship-grid">
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-ysl-libre.jpg" alt="YSL Libre bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
           </div>
-          <p class="tagline">Inspired by classic French haute couture</p>
-          <ul class="bottle-specs">
-            <li><span class="spec-label">Silhouette</span>Sharp, geometric rectangular body with signature,
-              double-beveled vertical facets.</li>
-            <li><span class="spec-label">Hardware</span>Warm satin-finished gold collar paired with an octagonal,
-              emerald-cut translucent cap.</li>
-            <li><span class="spec-label">The Weight</span>Thick, heavy-set crystal-clear glass base that sits
-              beautifully on any vanity table.</li>
-            <li><span class="spec-label">Aesthetic Impact</span>Your custom transparent gold foil sticker floats
-              inside, reflecting light through the liquid.</li>
-          </ul>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>YSL Libre</h3>
+              <span class="profile-tag">Floral</span>
+            </div>
+            <p class="flagship-tagline">Women</p>
+            <p class="flagship-desc">A daring bouquet of French lavender and orange blossom, warmed by the crackle
+              of high-proof spirits and a soft musk base.</p>
+          </div>
         </div>
-        <div class="bottle-card">
-          <div class="bottle-card-head">
-            <h3>The Slender Modern Column</h3>
-            <span class="ml-tag">10ml</span>
+
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-chanel-chance.jpg" alt="Chanel Chance bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
           </div>
-          <p class="tagline">Compact, pocket-sized luxury</p>
-          <ul class="bottle-specs">
-            <li><span class="spec-label">Silhouette</span>A tall, clean, square-column profile crafted from
-              heavy-walled clear glass.</li>
-            <li><span class="spec-label">Hardware</span>Crowned with a premium, highly reflective polished metallic
-              gold cylindrical cap.</li>
-            <li><span class="spec-label">Spray System</span>Micro-mist gold spray pump providing wide, fine scent
-              dispersion.</li>
-            <li><span class="spec-label">Aesthetic Impact</span>A sleek, vertical canvas that displays the golden
-              monogram label cleanly, without warping.</li>
-          </ul>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>Chanel Chance</h3>
+              <span class="profile-tag">Fruity Floral</span>
+            </div>
+            <p class="flagship-tagline">Women</p>
+            <p class="flagship-desc">Playful pink pepper and jasmine unfold into a warm, amber-flecked patchouli
+              base.</p>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-bleu-de-chanel.jpg" alt="Bleu de Chanel bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>Bleu de Chanel</h3>
+              <span class="profile-tag">Woody Aromatic</span>
+            </div>
+            <p class="flagship-tagline">Men</p>
+            <p class="flagship-desc">Citrus and mint open onto ginger and incense, settling into cedar and
+              sandalwood.</p>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-dior-sauvage.jpg" alt="Dior Sauvage bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>Dior Sauvage</h3>
+              <span class="profile-tag">Fresh Spicy</span>
+            </div>
+            <p class="flagship-tagline">Men</p>
+            <p class="flagship-desc">Calabrian bergamot meets peppery notes over a smooth, smoky amber base.</p>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-baccarat-rouge-540.jpg" alt="Baccarat Rouge 540 bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>Baccarat Rouge 540</h3>
+              <span class="profile-tag">Amber Floral</span>
+            </div>
+            <p class="flagship-tagline">Unisex</p>
+            <p class="flagship-desc">Saffron and jasmine warmed by ambergris and a whisper of woody musk.</p>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="flagship-image">
+            <img class="flagship-photo" src="images/flagship-jo-malone-peony.jpg"
+              alt="Jo Malone Peony & Blush Suede bottle"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="4" y="3" width="16" height="18" rx="1" />
+                <path d="M9 3v-1a1 1 0 011-1h4a1 1 0 011 1v1" />
+              </svg>
+              <span>Add Photo</span>
+            </div>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-head">
+              <h3>Jo Malone Peony &amp; Blush Suede</h3>
+              <span class="profile-tag">Floral Musk</span>
+            </div>
+            <p class="flagship-tagline">Unisex</p>
+            <p class="flagship-desc">Peony petals brushed with red apple and a soft suede musk.</p>
+          </div>
         </div>
       </div>
+      <p class="flagship-note">The full collection spans more than a dozen curated scents — see the complete menu
+        below.</p>
     </div>
   </section>
 
@@ -273,6 +380,19 @@
         <h2>Choose your bottle count.</h2>
         <p>Every package includes bar service, matching claim stubs, gold stickers, and a free 50ml signature bottle
           for the celebrant.</p>
+      </div>
+
+      <div class="vessel-strip">
+        <div class="vessel-item">
+          <span class="vessel-size">10ml</span>
+          <p><strong>The Slender Column</strong> — a tall, clean glass silhouette crowned with a polished gold
+            spray cap. Pocket-sized and refined.</p>
+        </div>
+        <div class="vessel-item">
+          <span class="vessel-size">30ml</span>
+          <p><strong>The Parisian Classic</strong> — a heavier, faceted glass body finished with a satin gold
+            collar and a crystal-clear octagonal cap.</p>
+        </div>
       </div>
 
       <div class="badge-callout">
@@ -385,55 +505,31 @@
         </div>
         <div class="menu-columns">
           <div class="menu-col">
-            <h4>Feminine</h4>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--rose);"></span>Sweet Floral</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Delicate, sweet blossoms with a whisper of romantic garden breeze.</p>
-            </div>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--rose);"></span>Fruity Fresh</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Vibrant, bright berries and crisp, sun-ripened orchard fruits.</p>
-            </div>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--rose);"></span>Warm Vanillic</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Cozy, comforting vanilla bean with deep, velvety amber undertones.</p>
-            </div>
+            <h4>Women</h4>
+            <ul class="scent-list">
+              <li>YSL Libre</li>
+              <li>YSL Y</li>
+              <li>Chanel Chance</li>
+              <li>Dior Miss Dior</li>
+              <li>Lancôme La Vie Est Belle</li>
+            </ul>
           </div>
           <div class="menu-col">
-            <h4>Masculine</h4>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--woody);"></span>Clean Woody</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Sleek, dry cedarwood with a sophisticated fresh-shave air.</p>
-            </div>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--woody);"></span>Fresh Citrus</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Zesty, uplifting bergamot paired with crisp Mediterranean herbs.</p>
-            </div>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--woody);"></span>Citrus Amber</span><span class="chevron">▾</span></button>
-              <p class="scent-notes">Rich, warm spices blended with a bold, masculine citrus bite.</p>
-            </div>
+            <h4>Men</h4>
+            <ul class="scent-list">
+              <li>Bleu de Chanel</li>
+              <li>Dior Sauvage</li>
+              <li>YSL Y Eau de Parfum</li>
+              <li>Acqua di Gio</li>
+            </ul>
           </div>
           <div class="menu-col">
             <h4>Unisex</h4>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--aquatic);"></span>Powdery Cotton</span><span
-                  class="chevron">▾</span></button>
-              <p class="scent-notes">The clean comfort of fresh linen sheets drying under the afternoon sun.</p>
-            </div>
-            <div class="scent">
-              <button type="button" class="scent-btn"><span><span class="dot"
-                    style="background:var(--aquatic);"></span>Fresh Aquatic</span><span
-                  class="chevron">▾</span></button>
-              <p class="scent-notes">Cool sea salt breezes mixed with light, modern ozonic accords.</p>
-            </div>
+            <ul class="scent-list">
+              <li>Baccarat Rouge 540</li>
+              <li>Jo Malone Peony &amp; Blush Suede</li>
+              <li>Byredo Blanche</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -490,7 +586,7 @@
           <div class="field-row">
             <div class="field">
               <label for="names">Event / couple name</label>
-              <input type="text" id="names" placeholder="Gabby &amp; Katie" maxlength="25">
+              <input type="text" id="names" placeholder="Gabriel &amp; Sofia" maxlength="25">
               <p class="field-hint">Max 25 characters — this is how it prints on the foil label.</p>
             </div>
             <div class="field">
@@ -632,14 +728,14 @@
           <path d="M56,256 Q100,261 144,256 L144,264 Q100,269 56,264 Z" fill="#FFFFFF" fill-opacity="0.15" />
 
           <!-- Clean Label Layout Group -->
-          <rect x="58" y="130" width="84" height="96" fill="#020617" stroke="url(#gold-grad2)" stroke-width="1.5" />
-          <rect x="64" y="136" width="72" height="84" fill="none" stroke="#a8842a" stroke-width="0.75" />
-          <text x="100" y="160" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
+          <rect x="56" y="128" width="88" height="104" fill="#020617" stroke="url(#gold-grad2)" stroke-width="1.5" />
+          <rect x="62" y="134" width="76" height="92" fill="none" stroke="#a8842a" stroke-width="0.75" />
+          <text x="100" y="158" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
             letter-spacing="2">LINDOR</text>
-          <line x1="74" y1="171" x2="126" y2="171" stroke="#a8842a" stroke-width="0.6" />
-          <text id="preview-names" x="100" y="190" text-anchor="middle" class="foil-names" font-size="14"
+          <line x1="74" y1="169" x2="126" y2="169" stroke="#a8842a" stroke-width="0.6" />
+          <text id="preview-names" x="100" y="188" text-anchor="middle" class="foil-names" font-size="14"
             fill="#F8F5F0">Your Names</text>
-          <text id="preview-date" x="100" y="207" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
+          <text id="preview-date" x="100" y="215" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
             letter-spacing="1.5">EVENT DATE</text>
         </svg>
         <p class="hint">Type your names and date on the left — this is roughly how your gold foil label will read on

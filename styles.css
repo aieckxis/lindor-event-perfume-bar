@@ -13,9 +13,8 @@
   --muted-champagne-2: rgba(248, 245, 240, 0.42);
   --muted-ochre: rgba(197, 168, 128, 0.62);
   --hairline: rgba(212, 175, 55, 0.22);
-  --rose: #c99a86;
-  --woody: #a3805c;
-  --aquatic: #8fb0a6;
+  --hairline-soft: rgba(212, 175, 55, 0.14);
+  --navy-veil: rgba(11, 19, 41, 0.6);
   --radius: 2px;
   --maxw: 1180px;
 }
@@ -589,86 +588,159 @@ section {
   color: var(--gold-deep);
 }
 
-/* ===== BOTTLE COLLECTION ===== */
-.bottles {
+/* ===== THE FLAGSHIP BOTTLES ===== */
+.flagship {
   background: var(--slate);
 }
 
-.bottle-grid {
+.flagship-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px 30px;
 }
 
-.bottle-card {
-  border: 1px solid var(--hairline);
-  background: var(--navy);
-  padding: 40px 34px;
+.flagship-card {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  transition: border-color .3s ease, transform .3s ease;
 }
 
-.bottle-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.bottle-card-head {
+.flagship-image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--navy-3), var(--navy) 70%);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
-.bottle-card h3 {
-  font-size: 26px;
-  color: var(--champagne);
+.flagship-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.bottle-card .ml-tag {
+.flagship-image .img-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted-ochre);
+  text-align: center;
+  padding: 20px;
+}
+
+.flagship-image .img-fallback svg {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+.flagship-image .img-fallback span {
   font-family: 'Cinzel', serif;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  padding: 6px 10px;
+}
+
+.flagship-image::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--hairline-soft);
+  pointer-events: none;
+}
+
+.flagship-body {
+  padding: 22px 2px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flagship-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.flagship-head h3 {
+  font-size: 21px;
+  color: var(--champagne);
+  line-height: 1.25;
+}
+
+.flagship-card .profile-tag {
+  flex-shrink: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  border: 1px solid var(--hairline);
+  padding: 5px 9px;
   white-space: nowrap;
 }
 
-.bottle-card .tagline {
-  font-style: italic;
+.flagship-card .flagship-tagline {
   font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
   color: var(--ochre);
-  font-size: 16px;
-  margin: -8px 0 0;
 }
 
-.bottle-specs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.bottle-specs li {
+.flagship-card p.flagship-desc {
   font-size: 13.5px;
   line-height: 1.65;
   color: var(--muted-champagne);
 }
 
-.bottle-specs .spec-label {
-  color: var(--gold-deep);
+.flagship-note {
+  margin-top: 46px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--muted-champagne-2);
+  letter-spacing: 0.02em;
+}
+
+/* ===== BOTTLE VESSELS (packages strip) ===== */
+.vessel-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin-bottom: 36px;
+}
+
+.vessel-item {
+  background: var(--navy);
+  padding: 22px 26px;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.vessel-item .vessel-size {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--gold-light);
+  flex-shrink: 0;
+}
+
+.vessel-item p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--muted-champagne);
+  margin: 0;
+}
+
+.vessel-item strong {
+  color: var(--champagne);
   font-weight: 600;
-  display: block;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 3px;
 }
 
 /* ===== BOOTH AESTHETIC ===== */
@@ -1033,13 +1105,13 @@ section {
 
 .menu-board {
   border: 1px solid var(--gold);
-  padding: 50px;
+  padding: 56px 50px;
   background: linear-gradient(180deg, rgba(212, 175, 55, 0.05), transparent 40%);
 }
 
 .menu-board-head {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 46px;
 }
 
 .menu-board-head .display {
@@ -1050,71 +1122,52 @@ section {
 .menu-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 0;
+}
+
+.menu-col {
+  padding: 0 30px;
+  border-left: 1px solid var(--hairline-soft);
+}
+
+.menu-col:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.menu-col:last-child {
+  padding-right: 0;
 }
 
 .menu-col h4 {
   font-family: 'Cinzel', serif;
   font-size: 12px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--hairline);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
-.menu-col .scent {
+.scent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scent-list li {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--champagne);
+  text-align: center;
+  padding: 11px 0;
   border-bottom: 1px dotted rgba(248, 245, 240, 0.14);
 }
 
-.menu-col .scent-btn {
-  width: 100%;
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 10px 0;
-  font-family: 'Playfair Display', serif;
-  font-size: 19px;
-  color: var(--champagne);
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-col .scent-btn .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
-}
-
-.menu-col .scent-btn .chevron {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  color: var(--ochre);
-  transition: transform .25s ease;
-}
-
-.menu-col .scent.open .scent-btn .chevron {
-  transform: rotate(180deg);
-}
-
-.menu-col .scent-notes {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease, padding .3s ease;
-  font-size: 13px;
-  color: var(--muted-champagne);
-  line-height: 1.6;
-  padding: 0 0 0 14px;
-}
-
-.menu-col .scent.open .scent-notes {
-  max-height: 100px;
-  padding: 0 0 14px 14px;
+.scent-list li:last-child {
+  border-bottom: none;
 }
 
 /* ===== PROCESS ===== */
@@ -1539,7 +1592,11 @@ footer a:focus-visible {
     grid-template-columns: 1fr 1fr;
   }
 
-  .bottle-grid {
+  .flagship-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vessel-strip {
     grid-template-columns: 1fr;
   }
 
@@ -1553,7 +1610,18 @@ footer a:focus-visible {
 
   .menu-columns {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 0;
+  }
+
+  .menu-col {
+    border-left: none;
+    padding: 26px 0 0 !important;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .menu-col:first-child {
+    border-top: none;
+    padding-top: 0 !important;
   }
 
   .book .wrap {
@@ -1620,8 +1688,8 @@ footer a:focus-visible {
     padding: 34px 22px;
   }
 
-  .bottle-card {
-    padding: 30px 24px;
+  .flagship-grid {
+    grid-template-columns: 1fr;
   }
 
   .wrap {
