@@ -41,14 +41,10 @@
         </div>
       </div>
       <div class="hero-bottle-stage">
+        <!-- Clear glass bottle with clear liquid based on references -->
         <svg viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg" role="img"
-          aria-label="Illustration of the Lindor bottle: a geometric beveled glass body, satin gold collar, and octagonal emerald-cut cap, with a custom gold foil label">
+          aria-label="Illustration of the Lindor bottle: a clear geometric glass body, transparent liquid, gold spray collar, and beveled clear cap">
           <defs>
-            <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#26385F" />
-              <stop offset="55%" stop-color="#162545" />
-              <stop offset="100%" stop-color="#0B1329" />
-            </linearGradient>
             <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#C5A880" />
               <stop offset="50%" stop-color="#E8CE7A" />
@@ -60,42 +56,56 @@
               <stop offset="75%" stop-color="#C5A880" />
               <stop offset="100%" stop-color="#E8CE7A" />
             </linearGradient>
+            <linearGradient id="clear-glass" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+              <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.1" />
+              <stop offset="80%" stop-color="#FFFFFF" stop-opacity="0.1" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.35" />
+            </linearGradient>
           </defs>
 
-          <!-- Octagonal emerald-cut cap, translucent -->
-          <polygon points="88,54 112,54 128,70 128,94 112,110 88,110 72,94 72,70" fill="#F8F5F0" fill-opacity="0.12"
-            stroke="url(#gold-grad)" stroke-width="1.4" />
-          <path d="M88 54 L128 94 M112 54 L72 94 M72 70 L128 70" stroke="#F8F5F0" stroke-opacity="0.18"
-            stroke-width="0.6" />
-          <path d="M80 62 Q100 58 120 62" stroke="#F8F5F0" stroke-opacity="0.35" stroke-width="1.2" fill="none" />
+          <!-- Transparent Beveled Cap (Glass/Acrylic Style) -->
+          <polygon points="76,46 124,46 136,58 136,78 124,90 76,90 64,78 64,58" fill="url(#clear-glass)"
+            stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.2" />
+          <path d="M76 46 L124 90 M124 46 L76 90 M64 68 L136 68" stroke="#FFFFFF" stroke-opacity="0.25"
+            stroke-width="0.8" />
 
-          <!-- Satin gold collar -->
-          <rect x="80" y="106" width="40" height="22" fill="url(#collar-satin)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="80" y1="113" x2="120" y2="113" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
-          <line x1="80" y1="120" x2="120" y2="120" stroke="#F8F5F0" stroke-opacity="0.4" stroke-width="0.5" />
+          <!-- Inner Gold Spray Pump Mechanisms Inside Cap/Neck -->
+          <rect x="94" y="66" width="12" height="24" fill="url(#gold-grad)" opacity="0.8" />
+          <circle cx="100" cy="62" r="2.5" fill="#CCCCCC" />
 
-          <!-- Glass neck -->
-          <rect x="88" y="122" width="24" height="26" fill="url(#glass)" stroke="#2A3A63" stroke-width="1" />
+          <!-- Satin Gold Collar -->
+          <rect x="80" y="90" width="40" height="24" fill="url(#collar-satin)" stroke="#8a6a26" stroke-width="0.5" />
+          <line x1="80" y1="98" x2="120" y2="98" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
+          <line x1="80" y1="106" x2="120" y2="106" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="0.5" />
 
-          <!-- Rectangular beveled body -->
-          <polygon points="71,144 129,144 142,157 142,289 129,302 71,302 58,289 58,157" fill="url(#glass)"
-            stroke="#2A3A63" stroke-width="1.5" />
-          <!-- facet highlight catching the light -->
-          <line x1="66" y1="162" x2="66" y2="284" stroke="#F8F5F0" stroke-opacity="0.16" stroke-width="1.4" />
-          <line x1="134" y1="162" x2="134" y2="284" stroke="#0B1329" stroke-opacity="0.4" stroke-width="1.4" />
-          <line x1="60" y1="160" x2="72" y2="148" stroke="#F8F5F0" stroke-opacity="0.3" stroke-width="1" />
+          <!-- Transparent Glass Neck & Internal Straw/Dip Tube -->
+          <rect x="86" y="114" width="28" height="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.3"
+            stroke-width="1.2" />
+          <path d="M100,114 Q102,220 114,300" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.2" fill="none" />
 
+          <!-- Clear Glass Body with Clear Liquid (No background color fill) -->
+          <!-- Outer Glass Border -->
+          <rect x="52" y="130" width="96" height="180" rx="4" fill="url(#clear-glass)" stroke="#FFFFFF"
+            stroke-opacity="0.5" stroke-width="1.8" />
+          <!-- Inner Thick Glass Base Reflection -->
+          <rect x="58" y="136" width="84" height="162" rx="2" fill="none" stroke="#FFFFFF" stroke-opacity="0.15"
+            stroke-width="1.2" />
+          <path d="M54,296 Q100,302 142,296 L142,306 Q100,312 54,306 Z" fill="#FFFFFF" fill-opacity="0.15" />
+
+          <!-- Gold Foil Label Container -->
           <g class="label-rise">
-            <rect x="66" y="205" width="68" height="84" fill="#060A1C" stroke="url(#gold-grad)" stroke-width="1.5" />
-            <rect x="72" y="211" width="56" height="72" fill="none" stroke="#C5A880" stroke-width="0.75" />
-            <text x="100" y="230" text-anchor="middle" class="foil-label-text label-shimmer"
-              font-family="Cormorant Garamond, serif" font-size="11" fill="#E8CE7A" letter-spacing="2">LINDOR</text>
-            <line x1="80" y1="240" x2="120" y2="240" stroke="#C5A880" stroke-width="0.6" />
-            <text id="hero-names" x="100" y="257" text-anchor="middle" class="foil-label-text"
+            <rect x="66" y="180" width="68" height="84" fill="#88703A" fill-opacity="0.95" stroke="url(#gold-grad)"
+              stroke-width="1.5" />
+            <rect x="71" y="185" width="58" height="74" fill="none" stroke="#E8CE7A" stroke-width="0.75" />
+            <text x="100" y="206" text-anchor="middle" class="foil-label-text label-shimmer"
+              font-family="Jost, sans-serif" font-size="11" fill="#E8CE7A" letter-spacing="2">LINDOR</text>
+            <line x1="80" y1="216" x2="120" y2="216" stroke="#E8CE7A" stroke-width="0.6" />
+            <text id="hero-names" x="100" y="234" text-anchor="middle" class="foil-label-text"
               font-family="Cormorant Garamond, serif" font-style="italic" font-size="13.5" fill="#F8F5F0">Gabby &amp;
               Katie</text>
-            <text id="hero-date" x="100" y="274" text-anchor="middle" class="foil-label-text"
-              font-family="Jost, sans-serif" font-size="9" fill="#D4AF37" letter-spacing="1.5">10 . 24 . 2026</text>
+            <text id="hero-date" x="100" y="250" text-anchor="middle" class="foil-label-text"
+              font-family="Jost, sans-serif" font-size="9" fill="#E8CE7A" letter-spacing="1.5">10 . 24 . 2026</text>
           </g>
         </svg>
       </div>
@@ -395,14 +405,10 @@
 
       <div class="preview-panel">
         <p class="eyebrow on-ink">Live Label Preview</p>
+        <!-- Clear glass bottle with clear liquid for preview panel -->
         <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" role="img"
-          aria-label="Live preview of the geometric bottle with your custom gold foil label">
+          aria-label="Live preview of the geometric clear bottle with your custom gold foil label">
           <defs>
-            <linearGradient id="glass2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#26385F" />
-              <stop offset="55%" stop-color="#162545" />
-              <stop offset="100%" stop-color="#0B1329" />
-            </linearGradient>
             <linearGradient id="gold-grad2" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#C5A880" />
               <stop offset="50%" stop-color="#E8CE7A" />
@@ -414,38 +420,48 @@
               <stop offset="75%" stop-color="#C5A880" />
               <stop offset="100%" stop-color="#E8CE7A" />
             </linearGradient>
+            <linearGradient id="clear-glass2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+              <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.1" />
+              <stop offset="80%" stop-color="#FFFFFF" stop-opacity="0.1" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.35" />
+            </linearGradient>
           </defs>
 
-          <!-- Octagonal emerald-cut cap, translucent -->
-          <polygon points="89,44 111,44 124,57 124,77 111,90 89,90 76,77 76,57" fill="#F8F5F0" fill-opacity="0.12"
-            stroke="url(#gold-grad2)" stroke-width="1.3" />
-          <path d="M89 44 L124 77 M111 44 L76 77 M76 57 L124 57" stroke="#F8F5F0" stroke-opacity="0.18"
-            stroke-width="0.6" />
-          <path d="M82 51 Q100 47 118 51" stroke="#F8F5F0" stroke-opacity="0.35" stroke-width="1.1" fill="none" />
+          <!-- Transparent Beveled Cap -->
+          <polygon points="77,36 123,36 134,47 134,65 123,76 77,76 66,65 66,47" fill="url(#clear-glass2)"
+            stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.2" />
+          <path d="M77 36 L123 76 M123 36 L77 76 M66 56 L134 56" stroke="#FFFFFF" stroke-opacity="0.2"
+            stroke-width="0.8" />
 
-          <!-- Satin gold collar -->
-          <rect x="82" y="86" width="36" height="20" fill="url(#collar-satin2)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="82" y1="92" x2="118" y2="92" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
-          <line x1="82" y1="99" x2="118" y2="99" stroke="#F8F5F0" stroke-opacity="0.4" stroke-width="0.5" />
+          <!-- Inner Gold Spray Assembly -->
+          <rect x="95" y="54" width="10" height="22" fill="url(#gold-grad2)" opacity="0.8" />
 
-          <!-- Glass neck -->
-          <rect x="88" y="102" width="24" height="22" fill="url(#glass2)" stroke="#2A3A63" stroke-width="1" />
+          <!-- Satin Gold Collar -->
+          <rect x="81" y="76" width="38" height="20" fill="url(#collar-satin2)" stroke="#8a6a26" stroke-width="0.5" />
+          <line x1="81" y1="83" x2="119" y2="83" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
 
-          <!-- Rectangular beveled body -->
-          <polygon points="71,120 129,120 140,131 140,245 129,256 71,256 60,245 60,131" fill="url(#glass2)"
-            stroke="#2A3A63" stroke-width="1.5" />
-          <line x1="66" y1="136" x2="66" y2="240" stroke="#F8F5F0" stroke-opacity="0.16" stroke-width="1.3" />
-          <line x1="134" y1="136" x2="134" y2="240" stroke="#0B1329" stroke-opacity="0.4" stroke-width="1.3" />
+          <!-- Clear Glass Neck & Internal Tube -->
+          <rect x="87" y="96" width="26" height="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.25"
+            stroke-width="1.2" />
+          <path d="M100,96 Q102,190 112,260" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1" fill="none" />
 
-          <rect x="68" y="176" width="64" height="72" fill="#060A1C" stroke="url(#gold-grad2)" stroke-width="1.5" />
-          <rect x="74" y="182" width="52" height="60" fill="none" stroke="#C5A880" stroke-width="0.75" />
-          <text x="100" y="199" text-anchor="middle" class="foil-label-text label-shimmer"
-            font-family="Cormorant Garamond, serif" font-size="11" fill="#E8CE7A" letter-spacing="2">LINDOR</text>
-          <line x1="78" y1="209" x2="122" y2="209" stroke="#C5A880" stroke-width="0.6" />
-          <text id="preview-names" x="100" y="226" text-anchor="middle" class="foil-label-text"
+          <!-- Clear Rectangular Glass Body -->
+          <rect x="54" y="110" width="92" height="160" rx="4" fill="url(#clear-glass2)" stroke="#FFFFFF"
+            stroke-opacity="0.5" stroke-width="1.8" />
+          <path d="M56,256 Q100,261 144,256 L144,264 Q100,269 56,264 Z" fill="#FFFFFF" fill-opacity="0.12" />
+
+          <!-- Updated Clean Gold Foil Label -->
+          <rect x="66" y="150" width="68" height="80" fill="#88703A" fill-opacity="0.95" stroke="url(#gold-grad2)"
+            stroke-width="1.5" />
+          <rect x="71" y="155" width="58" height="70" fill="none" stroke="#E8CE7A" stroke-width="0.75" />
+          <text x="100" y="176" text-anchor="middle" class="foil-label-text label-shimmer"
+            font-family="Jost, sans-serif" font-size="11" fill="#E8CE7A" letter-spacing="2">LINDOR</text>
+          <line x1="78" y1="186" x2="122" y2="186" stroke="#E8CE7A" stroke-width="0.6" />
+          <text id="preview-names" x="100" y="204" text-anchor="middle" class="foil-label-text"
             font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#F8F5F0">Your Names</text>
-          <text id="preview-date" x="100" y="241" text-anchor="middle" class="foil-label-text"
-            font-family="Jost, sans-serif" font-size="9" fill="#D4AF37" letter-spacing="1.5">EVENT DATE</text>
+          <text id="preview-date" x="100" y="220" text-anchor="middle" class="foil-label-text"
+            font-family="Jost, sans-serif" font-size="9" fill="#E8CE7A" letter-spacing="1.5">EVENT DATE</text>
         </svg>
         <p class="hint">Type your names and date on the left — this is roughly how your gold foil label will read on
           every bottle.</p>
