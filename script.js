@@ -67,31 +67,127 @@
     return parts[1] + " . " + parts[2] + " . " + parts[0];
   }
 
-  /* Shrinks an SVG text element's font-size until it fits inside maxWidth,
-     so long names never spill past the label's gold border. */
-  function fitLabelText(el, maxWidth, startSize, minSize) {
-    if (!el || typeof el.getComputedTextLength !== 'function') return;
+  function clearChildren(el) {
+    while (el.firstChild) el.removeChild(el.firstChild);
+  }
+
+  /* Tries the whole name on one line, shrinking font-size down to minSize.
+     Returns true if it ends up fitting inside maxWidth. */
+  function clampToWidth(tspanOrText, maxWidth) {
+    var len = tspanOrText.getComputedTextLength();
+    if (len > maxWidth) {
+      tspanOrText.setAttribute('textLength', maxWidth);
+      tspanOrText.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+    }
+  }
+
+  function fitSingleLine(el, text, maxWidth, startSize, minSize) {
+    clearChildren(el);
+    el.appendChild(document.createTextNode(text));
     var size = startSize;
     el.setAttribute('font-size', size);
-    try {
-      var len = el.getComputedTextLength();
-      while (len > maxWidth && size > minSize) {
-        size -= 0.5;
-        el.setAttribute('font-size', size);
-        len = el.getComputedTextLength();
-      }
-    } catch (e) { /* SVG not yet measurable; ignore */ }
+    var len = el.getComputedTextLength();
+    while (len > maxWidth && size > minSize) {
+      size -= 0.5;
+      el.setAttribute('font-size', size);
+      len = el.getComputedTextLength();
+    }
+    return len <= maxWidth;
+  }
+
+  /* Picks a break point for a two-line name: right after " & " if present
+     (so couple names read "First &" / "Second"), otherwise the space
+     closest to the middle of the string. */
+  function splitForTwoLines(text) {
+    var ampIdx = text.indexOf(' & ');
+    if (ampIdx !== -1) {
+      return [text.slice(0, ampIdx) + ' &', text.slice(ampIdx + 3)];
+    }
+    var spaces = [];
+    for (var i = 0; i < text.length; i++) {
+      if (text[i] === ' ') spaces.push(i);
+    }
+    if (!spaces.length) return null;
+    var mid = text.length / 2;
+    var best = spaces[0];
+    var bestDist = Math.abs(best - mid);
+    for (var j = 1; j < spaces.length; j++) {
+      var d = Math.abs(spaces[j] - mid);
+      if (d < bestDist) { best = spaces[j]; bestDist = d; }
+    }
+    return [text.slice(0, best), text.slice(best + 1)];
+  }
+
+  /* Renders the name as two centered tspans and shrinks both lines
+     together until they both fit inside maxWidth. */
+  function fitTwoLines(el, text, maxWidth, startSize, minSize, lineGap) {
+    var parts = splitForTwoLines(text);
+    if (!parts) return false;
+    clearChildren(el);
+    var t1 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+    t1.setAttribute('x', '100');
+    t1.textContent = parts[0];
+    var t2 = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+    t2.setAttribute('x', '100');
+    t2.setAttribute('dy', lineGap);
+    t2.textContent = parts[1];
+    el.appendChild(t1);
+    el.appendChild(t2);
+    var size = startSize;
+    el.setAttribute('font-size', size);
+    var len1 = t1.getComputedTextLength();
+    var len2 = t2.getComputedTextLength();
+    while ((len1 > maxWidth || len2 > maxWidth) && size > minSize) {
+      size -= 0.5;
+      el.setAttribute('font-size', size);
+      len1 = t1.getComputedTextLength();
+      len2 = t2.getComputedTextLength();
+    }
+    clampToWidth(t1, maxWidth);
+    clampToWidth(t2, maxWidth);
+    return true;
+  }
+
+  /* Fits a name into its label: single line if it reads fine that way,
+     otherwise wraps to two lines and nudges the date row down to match. */
+  function layoutNameLabel(nameEl, dateEl, text, o) {
+    if (!nameEl || typeof nameEl.getComputedTextLength !== 'function') return;
+    nameEl.setAttribute('y', o.singleY);
+    var fitsOnOneLine = fitSingleLine(nameEl, text, o.maxWidth, o.startSize, o.minSize);
+    if (fitsOnOneLine) {
+      dateEl.setAttribute('y', o.dateYSingle);
+      return;
+    }
+    nameEl.setAttribute('y', o.twoLineY);
+    var wrapped = fitTwoLines(nameEl, text, o.maxWidth, o.twoLineStartSize, o.minSize, o.lineGap);
+    if (wrapped) {
+      dateEl.setAttribute('y', o.dateYTwo);
+    } else {
+      nameEl.setAttribute('y', o.singleY);
+      fitSingleLine(nameEl, text, o.maxWidth, o.startSize, o.minSize);
+      clampToWidth(nameEl, o.maxWidth);
+      dateEl.setAttribute('y', o.dateYSingle);
+    }
   }
 
   function updatePreview() {
     var n = namesInput.value.trim() || "Your Names";
     var d = formatDate(dateInput.value);
-    prevNames.textContent = n;
+    var heroText = n === "Your Names" ? "Gabriel & Sofia" : n;
+    var prevText = n;
     prevDate.textContent = d;
-    heroNames.textContent = n === "Your Names" ? "Gabriel & Sofia" : n;
     heroDate.textContent = d === "EVENT DATE" ? "10 . 24 . 2026" : d;
-    fitLabelText(heroNames, 54, 15, 8);
-    fitLabelText(prevNames, 66, 14, 8);
+
+    layoutNameLabel(heroNames, heroDate, heroText, {
+      maxWidth: 54, startSize: 15, twoLineStartSize: 13, minSize: 7.5,
+      singleY: 234, twoLineY: 228, lineGap: 13,
+      dateYSingle: 250, dateYTwo: 258
+    });
+    layoutNameLabel(prevNames, prevDate, prevText, {
+      maxWidth: 66, startSize: 14, twoLineStartSize: 12, minSize: 7.5,
+      singleY: 190, twoLineY: 184, lineGap: 12,
+      dateYSingle: 207, dateYTwo: 216
+    });
   }
   namesInput.addEventListener('input', updatePreview);
   dateInput.addEventListener('input', updatePreview);
