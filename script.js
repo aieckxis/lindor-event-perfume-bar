@@ -291,9 +291,9 @@
   function updatePreview() {
     var n = namesInput.value.trim() || "Your Names";
     var d = formatDate(dateInput.value);
-    var heroText = n === "Your Names" ? "Gabriel & Sofia" : n;
+    var heroText = n === "Your Names" ? "Gabby & Katie" : n;
     var prevText = n;
-    var heroDateText = d === "EVENT DATE" ? "10 . 24 . 2026" : d;
+    var heroDateText = d === "EVENT DATE" ? "02 . 11 . 2027" : d;
     var prevDateText = d;
 
     layoutNameLabel(heroNames, heroDate, heroDateText, heroText, {
