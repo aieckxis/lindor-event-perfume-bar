@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <!-- Eto yung link para gumana ang kulay at layout ng styles.css -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -41,9 +42,8 @@
         </div>
       </div>
       <div class="hero-bottle-stage">
-        <!-- Clear glass bottle with clear liquid based on references -->
-        <svg viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg" role="img"
-          aria-label="Illustration of the Lindor bottle: a clear geometric glass body, transparent liquid, gold spray collar, and beveled clear cap">
+        <!-- Transparent Bottle Vector Outline -->
+        <svg viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg" role="img">
           <defs>
             <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#C5A880" />
@@ -64,36 +64,27 @@
             </linearGradient>
           </defs>
 
-          <!-- Transparent Beveled Cap (Glass/Acrylic Style) -->
+          <!-- Transparent Beveled Cap -->
           <polygon points="76,46 124,46 136,58 136,78 124,90 76,90 64,78 64,58" fill="url(#clear-glass)"
             stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.2" />
           <path d="M76 46 L124 90 M124 46 L76 90 M64 68 L136 68" stroke="#FFFFFF" stroke-opacity="0.25"
             stroke-width="0.8" />
-
-          <!-- Inner Gold Spray Pump Mechanisms Inside Cap/Neck -->
           <rect x="94" y="66" width="12" height="24" fill="url(#gold-grad)" opacity="0.8" />
-          <circle cx="100" cy="62" r="2.5" fill="#CCCCCC" />
 
           <!-- Satin Gold Collar -->
           <rect x="80" y="90" width="40" height="24" fill="url(#collar-satin)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="80" y1="98" x2="120" y2="98" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
-          <line x1="80" y1="106" x2="120" y2="106" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="0.5" />
 
-          <!-- Transparent Glass Neck & Internal Straw/Dip Tube -->
+          <!-- Clear Glass Neck & Dip Tube -->
           <rect x="86" y="114" width="28" height="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.3"
             stroke-width="1.2" />
           <path d="M100,114 Q102,220 114,300" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.2" fill="none" />
 
-          <!-- Clear Glass Body with Clear Liquid (No background color fill) -->
-          <!-- Outer Glass Border -->
+          <!-- Clear Bottle Body Container -->
           <rect x="52" y="130" width="96" height="180" rx="4" fill="url(#clear-glass)" stroke="#FFFFFF"
             stroke-opacity="0.5" stroke-width="1.8" />
-          <!-- Inner Thick Glass Base Reflection -->
-          <rect x="58" y="136" width="84" height="162" rx="2" fill="none" stroke="#FFFFFF" stroke-opacity="0.15"
-            stroke-width="1.2" />
           <path d="M54,296 Q100,302 142,296 L142,306 Q100,312 54,306 Z" fill="#FFFFFF" fill-opacity="0.15" />
 
-          <!-- Gold Foil Label Container -->
+          <!-- Foil Label Component -->
           <g class="label-rise">
             <rect x="66" y="180" width="68" height="84" fill="#88703A" fill-opacity="0.95" stroke="url(#gold-grad)"
               stroke-width="1.5" />
@@ -117,87 +108,23 @@
       <div class="section-head">
         <p class="eyebrow">The Experience</p>
         <h2>Four moments at the bar.</h2>
-        <p>More than a favor table — a live, guided ritual your guests walk through, glass in hand.</p>
       </div>
-    </div>
-    <div class="wrap" style="padding:0;">
       <div class="counter">
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#C5A880" stroke-width="1.3">
-            <circle cx="17" cy="17" r="13" />
-            <path d="M17 9v8l6 3" />
-          </svg>
           <h3>Consultation</h3>
-          <p>Guests sample the curated menu through glass cloches and tester vials, guided by our bar assistant to a
-            scent that fits their mood.</p>
+          <p>Guests sample the menu through glass cloches.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#C5A880" stroke-width="1.3">
-            <path d="M12 4h10M17 4v10M9 27h16l-2-13H11z" />
-          </svg>
           <h3>Decanting</h3>
-          <p>Their chosen fragrance is decanted right in front of them with gold or silver syringes — part craft, part
-            performance.</p>
+          <p>Chosen fragrance is decanted right on the spot.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#C5A880" stroke-width="1.3">
-            <rect x="9" y="9" width="16" height="18" rx="1" />
-            <path d="M9 15h16" />
-          </svg>
           <h3>Labelling</h3>
-          <p>Each bottle is hand-sealed with a metallic gold foil label bearing your names and event date — a keepsake,
-            not a favor.</p>
+          <p>Each bottle is sealed with custom metallic foil.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#C5A880" stroke-width="1.3">
-            <path d="M8 12h18l-2 14H10z" />
-            <path d="M13 12v-2a4 4 0 018 0v2" />
-          </svg>
           <h3>Claiming</h3>
-          <p>One stub, one bottle. Your coordinator distributes claim stubs, keeping the flow fair and orderly all
-            night.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="booth" id="booth">
-    <div class="wrap">
-      <div class="section-head on-ink">
-        <p class="eyebrow on-ink">The Booth</p>
-        <h2 style="color:var(--cream-text);">A boutique counter, styled to match.</h2>
-        <p>Built to sit comfortably inside high-end event styling — quiet, warm, and precise.</p>
-      </div>
-    </div>
-    <div class="wrap" style="padding:0;">
-      <div class="swatch-grid">
-        <div class="swatch">
-          <div><span class="swatch-chip" style="background:var(--marble);"></span></div>
-          <div>
-            <p class="swatch-name">The Runner</p>
-            <p>White tablecloth, accented with a metallic gold table runner.</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div><span class="swatch-chip" style="background:linear-gradient(135deg,#e8e8e8,#bfbfbf);"></span></div>
-          <div>
-            <p class="swatch-name">The Display</p>
-            <p>Testers and cloches arranged on a mirror tray or white marble slab.</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div><span class="swatch-chip" style="background:var(--gold);"></span></div>
-          <div>
-            <p class="swatch-name">The Light</p>
-            <p>Warm LED accents and geometric candle holders set the mood.</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div><span class="swatch-chip" style="background:var(--ink-2); border-color:var(--gold);"></span></div>
-          <div>
-            <p class="swatch-name">The Menu</p>
-            <p>A framed gold menu board listing every scent on offer.</p>
-          </div>
+          <p>Orderly distribution via matching claim stubs.</p>
         </div>
       </div>
     </div>
@@ -206,145 +133,33 @@
   <section class="packages" id="packages">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Packages</p>
         <h2>Choose your bottle count.</h2>
-        <p>Every package includes bar service, matching claim stubs, gold stickers, and a free 50ml signature bottle for
-          the celebrant.</p>
       </div>
-
       <div class="config-bar">
-        <div class="toggle-group">
-          <span class="label">Bottle Size</span>
-          <div class="toggle" role="group" aria-label="Bottle size">
-            <button type="button" data-size="10" class="active">10ml</button>
-            <button type="button" data-size="30">30ml</button>
+        <div class="toggle-group"><span class="label">Bottle Size</span>
+          <div class="toggle"><button data-size="10" class="active">10ml</button><button data-size="30">30ml</button>
           </div>
         </div>
-        <div class="toggle-group">
-          <span class="label">Scent Choices</span>
-          <div class="toggle" role="group" aria-label="Scent choices">
-            <button type="button" data-scents="4" class="active">4 Scents</button>
-            <button type="button" data-scents="6">6 Scents</button>
-          </div>
+        <div class="toggle-group"><span class="label">Scent Choices</span>
+          <div class="toggle"><button data-scents="4" class="active">4 Scents</button><button data-scents="6">6
+              Scents</button></div>
         </div>
       </div>
-
-      <div class="package-grid" id="package-grid">
+      <div class="package-grid">
         <div class="pkg-card" data-pkg="intimate">
           <h3>The Intimate</h3>
-          <p class="bottle-count">50 bottles · 3-hour service</p>
-          <p class="price"><span class="price-value">₱8,500</span></p>
-          <p class="per-guest"><span class="per-value">₱170</span> per guest</p>
-          <ul>
-            <li>3-hour unlimited bar service</li>
-            <li>1–2 professional bar assistants</li>
-            <li>50 custom claim stubs, motif-matched</li>
-            <li>Custom event gold stickers on every bottle</li>
-            <li class="free">Free 50ml signature bottle for the celebrant</li>
-          </ul>
-          <a class="choose" href="#book" data-choose="The Intimate (50 Bottles)">Choose The Intimate</a>
+          <p class="price"><span class="price-value">₱8,500</span></p><a class="choose" href="#book"
+            data-choose="The Intimate (50 Bottles)">Choose Package</a>
         </div>
         <div class="pkg-card popular" data-pkg="celebration">
-          <span class="popular-flag">Most Popular</span>
           <h3>The Celebration</h3>
-          <p class="bottle-count">100 bottles · 4-hour service</p>
-          <p class="price"><span class="price-value">₱13,500</span></p>
-          <p class="per-guest"><span class="per-value">₱135</span> per guest</p>
-          <ul>
-            <li>4-hour unlimited bar service</li>
-            <li>1–2 professional bar assistants</li>
-            <li>100 custom claim stubs, motif-matched</li>
-            <li>Custom event gold stickers on every bottle</li>
-            <li class="free">Free 50ml signature bottle for the celebrant</li>
-          </ul>
-          <a class="choose" href="#book" data-choose="The Celebration (100 Bottles)">Choose The Celebration</a>
+          <p class="price"><span class="price-value">₱13,500</span></p><a class="choose" href="#book"
+            data-choose="The Celebration (100 Bottles)">Choose Package</a>
         </div>
         <div class="pkg-card" data-pkg="grand">
           <h3>The Grand</h3>
-          <p class="bottle-count">150 bottles · 4-hour service</p>
-          <p class="price"><span class="price-value">₱18,500</span></p>
-          <p class="per-guest"><span class="per-value">₱123</span> per guest</p>
-          <ul>
-            <li>4-hour unlimited bar service</li>
-            <li>2 professional bar assistants</li>
-            <li>150 custom claim stubs, motif-matched</li>
-            <li>Custom event gold stickers on every bottle</li>
-            <li class="free">Free 50ml signature bottle for the celebrant</li>
-          </ul>
-          <a class="choose" href="#book" data-choose="The Grand (150 Bottles)">Choose The Grand</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="menu-section" id="scents">
-    <div class="wrap">
-      <div class="menu-board">
-        <div class="menu-board-head">
-          <p class="eyebrow on-ink">Scent Menu</p>
-          <p class="display">Curated Fragrance Profiles</p>
-        </div>
-        <div class="menu-columns">
-          <div class="menu-col">
-            <h4>Feminine</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Sweet Floral</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Fruity Fresh</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Warm Vanillic</span></div>
-          </div>
-          <div class="menu-col">
-            <h4>Masculine</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Clean Woody</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Fresh Citrus</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Citrus Amber</span></div>
-          </div>
-          <div class="menu-col">
-            <h4>Unisex</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--aquatic);"></span>Powdery Cotton</span>
-            </div>
-            <div class="scent"><span><span class="dot" style="background:var(--aquatic);"></span>Fresh Aquatic</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="process" id="process">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Booking Process</p>
-        <h2>Four steps to lock your date.</h2>
-      </div>
-      <div class="process-list">
-        <div class="process-item">
-          <span class="num">01</span>
-          <div>
-            <h3>Check availability</h3>
-            <p>Send your event date, venue, preferred bottle size, and scent count so we can confirm the calendar.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <span class="num">02</span>
-          <div>
-            <h3>Reserve with 30%</h3>
-            <p>A 30% non-refundable, transferable downpayment locks in your slot and starts your custom sticker and stub
-              design.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <span class="num">03</span>
-          <div>
-            <h3>Approve the design</h3>
-            <p>We send digital mockups of your gold sticker and claim stub for your review before anything goes to
-              print.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <span class="num">04</span>
-          <div>
-            <h3>Settle the balance</h3>
-            <p>The remaining 70% is due on the event day, before our team sets up the booth.</p>
-          </div>
+          <p class="price"><span class="price-value">₱18,500</span></p><a class="choose" href="#book"
+            data-choose="The Grand (150 Bottles)">Choose Package</a>
         </div>
       </div>
     </div>
@@ -353,155 +168,49 @@
   <section class="book" id="book">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Reserve Your Date</p>
-        <h2 style="font-size:clamp(28px,4vw,38px); margin:12px 0 26px;">Tell us about your event.</h2>
-        <form class="booking" id="booking-form">
+        <h2>Tell us about your event.</h2>
+        <form class="booking">
           <div class="field-row">
-            <div class="field">
-              <label for="names">Event / couple name</label>
-              <input type="text" id="names" placeholder="Gabby &amp; Katie">
+            <div class="field"><label>Event Name</label><input type="text" id="names" placeholder="Gabby &amp; Katie">
             </div>
-            <div class="field">
-              <label for="event-date">Event date</label>
-              <input type="date" id="event-date">
-            </div>
+            <div class="field"><label>Event Date</label><input type="date" id="event-date"></div>
           </div>
-          <div class="field">
-            <label for="venue">Venue &amp; city</label>
-            <input type="text" id="venue" placeholder="e.g. The Fountain Room, Quezon City">
-          </div>
+          <div class="field"><label>Venue</label><input type="text" id="venue"></div>
           <div class="field-row">
-            <div class="field">
-              <label for="pkg-select">Package</label>
-              <select id="pkg-select">
-                <option value="The Intimate (50 Bottles)">The Intimate — 50 Bottles</option>
-                <option value="The Celebration (100 Bottles)" selected>The Celebration — 100 Bottles</option>
-                <option value="The Grand (150 Bottles)">The Grand — 150 Bottles</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="guests">Estimated guest count</label>
-              <input type="number" id="guests" min="1" placeholder="e.g. 120">
-            </div>
+            <div class="field"><label>Package</label><select id="pkg-select">
+                <option value="The Intimate (50 Bottles)">50 Bottles</option>
+                <option value="The Celebration (100 Bottles)" selected>100 Bottles</option>
+              </select></div>
+            <div class="field"><label>Guests</label><input type="number" id="guests"></div>
           </div>
-          <div class="field">
-            <label for="contact">Your name, email &amp; contact number</label>
-            <textarea id="contact" placeholder="Full name, email address, mobile number"></textarea>
-          </div>
-          <div class="field">
-            <label for="notes">Anything else we should know?</label>
-            <textarea id="notes"
-              placeholder="Motif, theme colors, preferred bottle size, scent count, questions..."></textarea>
-          </div>
+          <div class="field"><textarea id="contact" placeholder="Contact details"></textarea></div>
+          <div class="field"><textarea id="notes" placeholder="Notes"></textarea></div>
           <div class="submit-row">
-            <button type="button" class="btn-dark" id="build-request">Prepare Booking Request</button>
+            <button type="button" class="btn-dark" id="build-request">Prepare Request</button>
             <button type="button" class="btn-outline" id="copy-request">Copy Details</button>
           </div>
-          <p class="form-note">This site can't send your request on its own. "Prepare Booking Request" opens an email to
-            us with everything filled in — review it, then hit send.</p>
           <div class="summary-box" id="summary-box"></div>
         </form>
       </div>
 
       <div class="preview-panel">
         <p class="eyebrow on-ink">Live Label Preview</p>
-        <!-- Clear glass bottle with clear liquid for preview panel -->
-        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" role="img"
-          aria-label="Live preview of the geometric clear bottle with your custom gold foil label">
-          <defs>
-            <linearGradient id="gold-grad2" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#C5A880" />
-              <stop offset="50%" stop-color="#E8CE7A" />
-              <stop offset="100%" stop-color="#C5A880" />
-            </linearGradient>
-            <linearGradient id="collar-satin2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#E8CE7A" />
-              <stop offset="45%" stop-color="#D4AF37" />
-              <stop offset="75%" stop-color="#C5A880" />
-              <stop offset="100%" stop-color="#E8CE7A" />
-            </linearGradient>
-            <linearGradient id="clear-glass2" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
-              <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.1" />
-              <stop offset="80%" stop-color="#FFFFFF" stop-opacity="0.1" />
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.35" />
-            </linearGradient>
-          </defs>
-
-          <!-- Transparent Beveled Cap -->
-          <polygon points="77,36 123,36 134,47 134,65 123,76 77,76 66,65 66,47" fill="url(#clear-glass2)"
-            stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.2" />
-          <path d="M77 36 L123 76 M123 36 L77 76 M66 56 L134 56" stroke="#FFFFFF" stroke-opacity="0.2"
-            stroke-width="0.8" />
-
-          <!-- Inner Gold Spray Assembly -->
-          <rect x="95" y="54" width="10" height="22" fill="url(#gold-grad2)" opacity="0.8" />
-
-          <!-- Satin Gold Collar -->
-          <rect x="81" y="76" width="38" height="20" fill="url(#collar-satin2)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="81" y1="83" x2="119" y2="83" stroke="#8a6a26" stroke-opacity="0.5" stroke-width="0.5" />
-
-          <!-- Clear Glass Neck & Internal Tube -->
-          <rect x="87" y="96" width="26" height="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.25"
-            stroke-width="1.2" />
-          <path d="M100,96 Q102,190 112,260" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1" fill="none" />
-
-          <!-- Clear Rectangular Glass Body -->
-          <rect x="54" y="110" width="92" height="160" rx="4" fill="url(#clear-glass2)" stroke="#FFFFFF"
+        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="54" y="110" width="92" height="160" rx="4" fill="url(#clear-glass)" stroke="#FFFFFF"
             stroke-opacity="0.5" stroke-width="1.8" />
-          <path d="M56,256 Q100,261 144,256 L144,264 Q100,269 56,264 Z" fill="#FFFFFF" fill-opacity="0.12" />
-
-          <!-- Updated Clean Gold Foil Label -->
-          <rect x="66" y="150" width="68" height="80" fill="#88703A" fill-opacity="0.95" stroke="url(#gold-grad2)"
-            stroke-width="1.5" />
-          <rect x="71" y="155" width="58" height="70" fill="none" stroke="#E8CE7A" stroke-width="0.75" />
-          <text x="100" y="176" text-anchor="middle" class="foil-label-text label-shimmer"
-            font-family="Jost, sans-serif" font-size="11" fill="#E8CE7A" letter-spacing="2">LINDOR</text>
-          <line x1="78" y1="186" x2="122" y2="186" stroke="#E8CE7A" stroke-width="0.6" />
-          <text id="preview-names" x="100" y="204" text-anchor="middle" class="foil-label-text"
-            font-family="Cormorant Garamond, serif" font-style="italic" font-size="13" fill="#F8F5F0">Your Names</text>
-          <text id="preview-date" x="100" y="220" text-anchor="middle" class="foil-label-text"
-            font-family="Jost, sans-serif" font-size="9" fill="#E8CE7A" letter-spacing="1.5">EVENT DATE</text>
+          <rect x="66" y="150" width="68" height="80" fill="#88703A" stroke="url(#gold-grad)" stroke-width="1.5" />
+          <text x="100" y="176" text-anchor="middle" font-family="Jost" font-size="11" fill="#E8CE7A">LINDOR</text>
+          <text id="preview-names" x="100" y="204" text-anchor="middle" font-family="Cormorant Garamond" font-size="13"
+            fill="#F8F5F0">Your Names</text>
+          <text id="preview-date" x="100" y="220" text-anchor="middle" font-family="Jost" font-size="9"
+            fill="#E8CE7A">EVENT DATE</text>
         </svg>
-        <p class="hint">Type your names and date on the left — this is roughly how your gold foil label will read on
-          every bottle.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h4>Lindor Parfum</h4>
-          <p>The mobile event perfume bar — bringing a live scent-consultation counter to weddings, debuts, christenings
-            and corporate launches.</p>
-        </div>
-        <div>
-          <h4>Enquiries</h4>
-          <ul>
-            <li><a href="mailto:hello@lindorparfum.ph">hello@lindorparfum.ph</a></li>
-            <li><a href="#book">Reserve a date</a></li>
-            <li>Instagram @lindorparfum</li>
-          </ul>
-        </div>
-        <div>
-          <h4>On Site</h4>
-          <ul>
-            <li>Setup: 1.5–2 hrs before your program</li>
-            <li>Requires 1 standard outlet</li>
-            <li>Minimum space: 2×2 meters</li>
-          </ul>
-        </div>
-      </div>
-      <p class="terms-note">"No Leftover" policy: any bottles unclaimed by the end of service are packaged and handed to
-        the host — you keep every bottle in your paid package. Reservation requires a 30% non-refundable, transferable
-        downpayment; the remaining 70% is due on the event day prior to setup.</p>
-    </div>
-  </footer>
-
+  <!-- Eto naman yung link para sa logical processing ng script.js -->
   <script src="script.js"></script>
-
 </body>
 
 </html>
