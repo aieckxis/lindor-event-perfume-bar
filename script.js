@@ -11,8 +11,18 @@
     document.querySelectorAll('.pkg-card').forEach(function (card) {
       var key = card.getAttribute('data-pkg');
       var pair = prices[key][size][scents];
-      card.querySelector('.price-value').textContent = peso(pair[0]);
-      card.querySelector('.per-value').textContent = peso(pair[1]);
+      var priceEl = card.querySelector('.price-value');
+      var perEl = card.querySelector('.per-value');
+      var price = card.querySelector('.price');
+      var per = card.querySelector('.per-guest');
+      price.style.opacity = 0;
+      per.style.opacity = 0;
+      setTimeout(function () {
+        priceEl.textContent = peso(pair[0]);
+        perEl.textContent = peso(pair[1]);
+        price.style.opacity = 1;
+        per.style.opacity = 1;
+      }, 90);
     });
   }
   document.querySelectorAll('[data-size]').forEach(function (btn) {
@@ -105,4 +115,77 @@
       });
     }
   });
+
+  /* ===== Mobile menu ===== */
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', function () {
+      var isOpen = mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    mobileNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  }
+
+  /* ===== Header shadow on scroll ===== */
+  var header = document.querySelector('header.site');
+  if (header) {
+    var onScroll = function () {
+      if (window.scrollY > 12) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ===== Scroll reveal ===== */
+  var revealTargets = document.querySelectorAll(
+    '.section-head, .counter-item, .swatch, .pkg-card, .process-item, .menu-board, .preview-panel'
+  );
+  revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  /* ===== Active nav link on scroll ===== */
+  var navLinks = document.querySelectorAll('nav.links a');
+  var sections = Array.prototype.slice.call(navLinks).map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    var navIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = '#' + entry.target.id;
+        var link = document.querySelector('nav.links a[href="' + id + '"]');
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (a) { a.classList.remove('active-link'); });
+          link.classList.add('active-link');
+        }
+      });
+    }, { threshold: 0, rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { navIo.observe(s); });
+  }
 })();
