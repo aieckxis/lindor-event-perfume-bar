@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,6 +20,7 @@
       <div class="logo"><span class="mark">✦</span> Lindor Parfum</div>
       <nav class="links">
         <a href="#experience">Experience</a>
+        <a href="#bottles">Bottles</a>
         <a href="#packages">Packages</a>
         <a href="#scents">Scents</a>
         <a href="#process">Booking</a>
@@ -36,6 +37,7 @@
     </div>
     <nav class="mobile-nav" id="mobile-nav">
       <a href="#experience">Experience</a>
+      <a href="#bottles">Bottles</a>
       <a href="#packages">Packages</a>
       <a href="#scents">Scents</a>
       <a href="#process">Booking</a>
@@ -52,7 +54,15 @@
           fragrance decanted and foil-labelled with your names and date, on the spot.</p>
         <div class="cta-row">
           <a class="btn-primary" href="#book">Reserve Your Date</a>
-          <a class="btn-ghost" href="#packages">See Packages</a>
+          <a class="btn-ghost" href="#bottles">View Our Bottle Collection</a>
+        </div>
+        <div class="avail-check">
+          <p class="avail-label">Check Date Availability</p>
+          <div class="avail-row">
+            <input type="date" id="avail-date" aria-label="Event date to check">
+            <button type="button" class="btn-outline" id="avail-btn" style="padding:12px 20px;">Check</button>
+          </div>
+          <p class="avail-result" id="avail-result"></p>
         </div>
       </div>
       <div class="hero-bottle-stage">
@@ -61,9 +71,9 @@
           aria-label="Illustration of a clear perfume bottle with a custom gold foil label">
           <defs>
             <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#8a6a26" />
-              <stop offset="50%" stop-color="#e9d9a8" />
-              <stop offset="100%" stop-color="#8a6a26" />
+              <stop offset="0%" stop-color="#a8842a" />
+              <stop offset="50%" stop-color="#e8cd6e" />
+              <stop offset="100%" stop-color="#a8842a" />
             </linearGradient>
             <linearGradient id="clear-glass" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
@@ -84,8 +94,8 @@
           <circle cx="100" cy="62" r="2" fill="#DDDDDD" />
 
           <!-- Gold Spray Pump Collar -->
-          <rect x="80" y="90" width="40" height="24" fill="url(#gold-grad)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="80" y1="98" x2="120" y2="98" stroke="#8a6a26" stroke-opacity="0.4" stroke-width="0.5" />
+          <rect x="80" y="90" width="40" height="24" fill="url(#gold-grad)" stroke="#a8842a" stroke-width="0.5" />
+          <line x1="80" y1="98" x2="120" y2="98" stroke="#a8842a" stroke-opacity="0.4" stroke-width="0.5" />
           <line x1="80" y1="106" x2="120" y2="106" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="0.5" />
 
           <!-- Glass Neck & Internal Liquid Dip Straw -->
@@ -103,14 +113,14 @@
 
           <!-- Foil Label Layer -->
           <g class="label-rise">
-            <rect x="66" y="180" width="68" height="84" fill="#0c110f" stroke="url(#gold-grad)" stroke-width="1.5" />
-            <rect x="71" y="185" width="58" height="74" fill="none" stroke="#8a6a26" stroke-width="0.75" />
-            <text x="100" y="206" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e9d9a8"
+            <rect x="66" y="180" width="68" height="84" fill="#020617" stroke="url(#gold-grad)" stroke-width="1.5" />
+            <rect x="71" y="185" width="58" height="74" fill="none" stroke="#a8842a" stroke-width="0.75" />
+            <text x="100" y="206" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
               letter-spacing="2">LINDOR</text>
-            <line x1="78" y1="216" x2="122" y2="216" stroke="#8a6a26" stroke-width="0.6" />
+            <line x1="78" y1="216" x2="122" y2="216" stroke="#a8842a" stroke-width="0.6" />
             <text id="hero-names" x="100" y="234" text-anchor="middle" class="foil-names" font-size="15"
-              fill="#f4efe4">Gabriel &amp; Sofia</text>
-            <text id="hero-date" x="100" y="250" text-anchor="middle" class="foil-date" font-size="9" fill="#c9a24b"
+              fill="#F8F5F0">Gabby &amp; Katie</text>
+            <text id="hero-date" x="100" y="250" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
               letter-spacing="1.5">10 . 24 . 2026</text>
           </g>
         </svg>
@@ -129,7 +139,7 @@
     <div class="wrap" style="padding:0;">
       <div class="counter">
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#8a6a26" stroke-width="1.3">
+          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#D4AF37" stroke-width="1.3">
             <circle cx="17" cy="17" r="13" />
             <path d="M17 9v8l6 3" />
           </svg>
@@ -138,24 +148,24 @@
             scent that fits their mood.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#8a6a26" stroke-width="1.3">
+          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#D4AF37" stroke-width="1.3">
             <path d="M12 4h10M17 4v10M9 27h16l-2-13H11z" />
           </svg>
-          <h3>Decanting</h3>
-          <p>Their chosen fragrance is decanted right in front of them with gold or silver syringes — part craft, part
-            performance.</p>
+          <h3>Bottle Pick-up</h3>
+          <p>Guests pick a glass bottle from our tray — already pre-labeled with your custom sticker and pre-capped
+            for a clean, neat display.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#8a6a26" stroke-width="1.3">
+          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#D4AF37" stroke-width="1.3">
             <rect x="9" y="9" width="16" height="18" rx="1" />
             <path d="M9 15h16" />
           </svg>
-          <h3>Labelling</h3>
-          <p>Each bottle is hand-sealed with a metallic gold foil label bearing your names and event date — a keepsake,
-            not a favor.</p>
+          <h3>Live Fill &amp; Reseal</h3>
+          <p>The assistant twists off the cap and cleanly fills the bottle right in front of them from our Luxury
+            Glass Scent Dispenser Jars.</p>
         </div>
         <div class="counter-item">
-          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#8a6a26" stroke-width="1.3">
+          <svg class="glyph" viewBox="0 0 34 34" fill="none" stroke="#D4AF37" stroke-width="1.3">
             <path d="M8 12h18l-2 14H10z" />
             <path d="M13 12v-2a4 4 0 018 0v2" />
           </svg>
@@ -167,18 +177,65 @@
     </div>
   </section>
 
+  <section class="bottles" id="bottles">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Flagship Bottles</p>
+        <h2>Two silhouettes, one standard of finish.</h2>
+        <p>Every bottle in the collection is heavy-walled clear glass, capped in polished metallic gold, and dressed
+          in your custom foil label.</p>
+      </div>
+      <div class="bottle-grid">
+        <div class="bottle-card">
+          <div class="bottle-card-head">
+            <h3>The Parisian Classic</h3>
+            <span class="ml-tag">30ml</span>
+          </div>
+          <p class="tagline">Inspired by classic French haute couture</p>
+          <ul class="bottle-specs">
+            <li><span class="spec-label">Silhouette</span>Sharp, geometric rectangular body with signature,
+              double-beveled vertical facets.</li>
+            <li><span class="spec-label">Hardware</span>Warm satin-finished gold collar paired with an octagonal,
+              emerald-cut translucent cap.</li>
+            <li><span class="spec-label">The Weight</span>Thick, heavy-set crystal-clear glass base that sits
+              beautifully on any vanity table.</li>
+            <li><span class="spec-label">Aesthetic Impact</span>Your custom transparent gold foil sticker floats
+              inside, reflecting light through the liquid.</li>
+          </ul>
+        </div>
+        <div class="bottle-card">
+          <div class="bottle-card-head">
+            <h3>The Slender Modern Column</h3>
+            <span class="ml-tag">10ml</span>
+          </div>
+          <p class="tagline">Compact, pocket-sized luxury</p>
+          <ul class="bottle-specs">
+            <li><span class="spec-label">Silhouette</span>A tall, clean, square-column profile crafted from
+              heavy-walled clear glass.</li>
+            <li><span class="spec-label">Hardware</span>Crowned with a premium, highly reflective polished metallic
+              gold cylindrical cap.</li>
+            <li><span class="spec-label">Spray System</span>Micro-mist gold spray pump providing wide, fine scent
+              dispersion.</li>
+            <li><span class="spec-label">Aesthetic Impact</span>A sleek, vertical canvas that displays the golden
+              monogram label cleanly, without warping.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="booth" id="booth">
     <div class="wrap">
       <div class="section-head on-ink">
         <p class="eyebrow on-ink">The Booth</p>
-        <h2 style="color:var(--cream-text);">A boutique counter, styled to match.</h2>
+        <h2 style="color:var(--champagne);">A boutique counter, styled to match.</h2>
         <p>Built to sit comfortably inside high-end event styling — quiet, warm, and precise.</p>
       </div>
     </div>
     <div class="wrap" style="padding:0;">
       <div class="swatch-grid">
         <div class="swatch">
-          <div><span class="swatch-chip" style="background:var(--marble);"></span></div>
+          <div><span class="swatch-chip" style="background:var(--champagne);"></span></div>
           <div>
             <p class="swatch-name">The Runner</p>
             <p>White tablecloth, accented with a metallic gold table runner.</p>
@@ -199,7 +256,7 @@
           </div>
         </div>
         <div class="swatch">
-          <div><span class="swatch-chip" style="background:var(--ink-2); border-color:var(--gold);"></span></div>
+          <div><span class="swatch-chip" style="background:var(--navy-3); border-color:var(--gold);"></span></div>
           <div>
             <p class="swatch-name">The Menu</p>
             <p>A framed gold menu board listing every scent on offer.</p>
@@ -214,8 +271,14 @@
       <div class="section-head">
         <p class="eyebrow">Packages</p>
         <h2>Choose your bottle count.</h2>
-        <p>Every package includes bar service, matching claim stubs, gold stickers, and a free 50ml signature bottle for
-          the celebrant.</p>
+        <p>Every package includes bar service, matching claim stubs, gold stickers, and a free 50ml signature bottle
+          for the celebrant.</p>
+      </div>
+
+      <div class="badge-callout">
+        <span class="badge-icon">🎁</span>
+        <span><strong>Free Host Exclusive:</strong> every package includes one custom-made 50ml Premium Signature
+          Bottle, beautifully labeled for the celebrant as a personal keepsake.</span>
       </div>
 
       <div class="config-bar">
@@ -280,6 +343,36 @@
           <a class="choose" href="#book" data-choose="The Grand (150 Bottles)">Choose The Grand</a>
         </div>
       </div>
+
+      <div class="addons-panel">
+        <h3>Optional Add-ons &amp; Estimated Investment</h3>
+        <p class="addons-sub">Add these to whichever package you're leaning toward — the estimate below updates
+          live.</p>
+
+        <div class="addon-row">
+          <input type="checkbox" id="addon-shimmer">
+          <label for="addon-shimmer">Cosmetic Gold Shimmer in the Juice
+            <span class="addon-price">₱1,000 flat, added once to the whole package</span>
+          </label>
+        </div>
+        <div class="addon-row">
+          <input type="checkbox" id="addon-pouch">
+          <label for="addon-pouch">Velvet Drawstring Gift Pouches
+            <span class="addon-price">+₱15 per bottle</span>
+          </label>
+        </div>
+
+        <div class="estimate-total">
+          <div class="line"><span>Package base (<span id="est-pkg-name">The Celebration — 100
+                Bottles</span>)</span><span id="est-base">₱13,500</span></div>
+          <div class="line" id="est-shimmer-line" style="display:none;"><span>Gold shimmer add-on</span><span
+              id="est-shimmer">₱1,000</span></div>
+          <div class="line" id="est-pouch-line" style="display:none;"><span>Velvet pouches add-on</span><span
+              id="est-pouch">₱0</span></div>
+          <div class="line grand"><span>Estimated Investment</span><span id="est-total">₱13,500</span></div>
+          <div class="line down"><span>30% Downpayment to Lock Date</span><span id="est-down">₱4,050</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -293,21 +386,53 @@
         <div class="menu-columns">
           <div class="menu-col">
             <h4>Feminine</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Sweet Floral</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Fruity Fresh</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--rose);"></span>Warm Vanillic</span></div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--rose);"></span>Sweet Floral</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Delicate, sweet blossoms with a whisper of romantic garden breeze.</p>
+            </div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--rose);"></span>Fruity Fresh</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Vibrant, bright berries and crisp, sun-ripened orchard fruits.</p>
+            </div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--rose);"></span>Warm Vanillic</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Cozy, comforting vanilla bean with deep, velvety amber undertones.</p>
+            </div>
           </div>
           <div class="menu-col">
             <h4>Masculine</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Clean Woody</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Fresh Citrus</span></div>
-            <div class="scent"><span><span class="dot" style="background:var(--woody);"></span>Citrus Amber</span></div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--woody);"></span>Clean Woody</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Sleek, dry cedarwood with a sophisticated fresh-shave air.</p>
+            </div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--woody);"></span>Fresh Citrus</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Zesty, uplifting bergamot paired with crisp Mediterranean herbs.</p>
+            </div>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--woody);"></span>Citrus Amber</span><span class="chevron">▾</span></button>
+              <p class="scent-notes">Rich, warm spices blended with a bold, masculine citrus bite.</p>
+            </div>
           </div>
           <div class="menu-col">
             <h4>Unisex</h4>
-            <div class="scent"><span><span class="dot" style="background:var(--aquatic);"></span>Powdery Cotton</span>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--aquatic);"></span>Powdery Cotton</span><span
+                  class="chevron">▾</span></button>
+              <p class="scent-notes">The clean comfort of fresh linen sheets drying under the afternoon sun.</p>
             </div>
-            <div class="scent"><span><span class="dot" style="background:var(--aquatic);"></span>Fresh Aquatic</span>
+            <div class="scent">
+              <button type="button" class="scent-btn"><span><span class="dot"
+                    style="background:var(--aquatic);"></span>Fresh Aquatic</span><span
+                  class="chevron">▾</span></button>
+              <p class="scent-notes">Cool sea salt breezes mixed with light, modern ozonic accords.</p>
             </div>
           </div>
         </div>
@@ -365,7 +490,8 @@
           <div class="field-row">
             <div class="field">
               <label for="names">Event / couple name</label>
-              <input type="text" id="names" placeholder="Gabriel &amp; Sofia">
+              <input type="text" id="names" placeholder="Gabby &amp; Katie" maxlength="25">
+              <p class="field-hint">Max 25 characters — this is how it prints on the foil label.</p>
             </div>
             <div class="field">
               <label for="event-date">Event date</label>
@@ -373,8 +499,31 @@
             </div>
           </div>
           <div class="field">
-            <label for="venue">Venue &amp; city</label>
-            <input type="text" id="venue" placeholder="e.g. The Fountain Room, Quezon City">
+            <label for="occasion">Event occasion / theme</label>
+            <select id="occasion">
+              <option value="Wedding">Wedding</option>
+              <option value="Debut">Debut</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Corporate">Corporate</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="venue">Venue name &amp; address</label>
+              <input type="text" id="venue" placeholder="e.g. The Fountain Room, Quezon City">
+            </div>
+            <div class="field">
+              <label for="location-zone">Venue area</label>
+              <select id="location-zone">
+                <option value="Metro Manila" data-fee="0">Metro Manila (no travel fee)</option>
+                <option value="Rizal" data-fee="600">Rizal (+₱600 travel fee)</option>
+                <option value="Cavite" data-fee="800">Cavite (+₱800 travel fee)</option>
+                <option value="Laguna" data-fee="800">Laguna (+₱800 travel fee)</option>
+                <option value="Tagaytay" data-fee="1200">Tagaytay (+₱1,200 travel fee)</option>
+                <option value="Others" data-fee="-1">Other area (fee quoted after review)</option>
+              </select>
+            </div>
           </div>
           <div class="field-row">
             <div class="field">
@@ -399,10 +548,41 @@
             <textarea id="notes"
               placeholder="Motif, theme colors, preferred bottle size, scent count, questions..."></textarea>
           </div>
-          <div class="submit-row">
-            <button type="button" class="btn-dark" id="build-request">Prepare Booking Request</button>
-            <button type="button" class="btn-outline" id="copy-request">Copy Details</button>
+
+          <div class="policy-accordion">
+            <details class="policy-item">
+              <summary>The Transparent "No Leftover" Policy</summary>
+              <p>We believe you should get exactly what you pay for. If any bottles from your package remain
+                unclaimed at the end of our booked service hours, our assistants will fill, cap, seal, and pack the
+                remaining labeled bottles into a pristine storage box and hand them directly to you before we leave
+                the venue.</p>
+            </details>
+            <details class="policy-item">
+              <summary>The Secure Guest Claim Stub System</summary>
+              <p>To guarantee an orderly reception and prevent budget-breaking "double claiming" of favors, our team
+                operates strictly on a "one stub, one bottle" basis. Stubs are provided to your coordinators in
+                advance.</p>
+            </details>
+            <details class="policy-item">
+              <summary>Ingress &amp; Setup Time Requirements</summary>
+              <p>We require access to your venue exactly 1.5 to 2 hours before your reception or program begins,
+                to construct our boutique display, apply your custom gold-foil stickers, and pre-cap every bottle
+                so the bar is ready for rapid, high-speed fills the moment it opens.</p>
+            </details>
           </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="agree-terms">
+            <label for="agree-terms">I agree to Lindor Parfum's Terms &amp; Conditions above, including the "No
+              Leftover" policy, claim stub system, and ingress requirements.</label>
+          </div>
+
+          <div class="submit-row">
+            <button type="button" class="btn-dark" id="build-request" disabled>Prepare Booking Request</button>
+            <button type="button" class="btn-outline" id="copy-request" disabled>Copy Details</button>
+          </div>
+          <p class="form-warning" id="terms-warning">Please review and check the Terms &amp; Conditions box above
+            before sending your request.</p>
           <p class="form-note">This site can't send your request on its own. "Prepare Booking Request" opens an email to
             us with everything filled in — review it, then hit send.</p>
           <div class="summary-box" id="summary-box"></div>
@@ -416,9 +596,9 @@
           aria-label="Live preview of your custom gold foil bottle label">
           <defs>
             <linearGradient id="gold-grad2" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#8a6a26" />
-              <stop offset="50%" stop-color="#e9d9a8" />
-              <stop offset="100%" stop-color="#8a6a26" />
+              <stop offset="0%" stop-color="#a8842a" />
+              <stop offset="50%" stop-color="#e8cd6e" />
+              <stop offset="100%" stop-color="#a8842a" />
             </linearGradient>
             <linearGradient id="clear-glass2" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
@@ -438,8 +618,8 @@
           <rect x="95" y="54" width="10" height="22" fill="url(#gold-grad2)" opacity="0.85" />
 
           <!-- Gold Collar component -->
-          <rect x="81" y="76" width="38" height="20" fill="url(#gold-grad2)" stroke="#8a6a26" stroke-width="0.5" />
-          <line x1="81" y1="83" x2="119" y2="83" stroke="#8a6a26" stroke-opacity="0.4" stroke-width="0.5" />
+          <rect x="81" y="76" width="38" height="20" fill="url(#gold-grad2)" stroke="#a8842a" stroke-width="0.5" />
+          <line x1="81" y1="83" x2="119" y2="83" stroke="#a8842a" stroke-opacity="0.4" stroke-width="0.5" />
 
           <!-- Clear neck & draw line straw -->
           <rect x="87" y="96" width="26" height="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.25"
@@ -452,14 +632,14 @@
           <path d="M56,256 Q100,261 144,256 L144,264 Q100,269 56,264 Z" fill="#FFFFFF" fill-opacity="0.15" />
 
           <!-- Clean Label Layout Group -->
-          <rect x="58" y="130" width="84" height="96" fill="#0c110f" stroke="url(#gold-grad2)" stroke-width="1.5" />
-          <rect x="64" y="136" width="72" height="84" fill="none" stroke="#8a6a26" stroke-width="0.75" />
-          <text x="100" y="160" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e9d9a8"
+          <rect x="58" y="130" width="84" height="96" fill="#020617" stroke="url(#gold-grad2)" stroke-width="1.5" />
+          <rect x="64" y="136" width="72" height="84" fill="none" stroke="#a8842a" stroke-width="0.75" />
+          <text x="100" y="160" text-anchor="middle" class="foil-brand label-shimmer" font-size="11" fill="#e8cd6e"
             letter-spacing="2">LINDOR</text>
-          <line x1="74" y1="171" x2="126" y2="171" stroke="#8a6a26" stroke-width="0.6" />
+          <line x1="74" y1="171" x2="126" y2="171" stroke="#a8842a" stroke-width="0.6" />
           <text id="preview-names" x="100" y="190" text-anchor="middle" class="foil-names" font-size="14"
-            fill="#f4efe4">Your Names</text>
-          <text id="preview-date" x="100" y="207" text-anchor="middle" class="foil-date" font-size="9" fill="#c9a24b"
+            fill="#F8F5F0">Your Names</text>
+          <text id="preview-date" x="100" y="207" text-anchor="middle" class="foil-date" font-size="9" fill="#C5A880"
             letter-spacing="1.5">EVENT DATE</text>
         </svg>
         <p class="hint">Type your names and date on the left — this is roughly how your gold foil label will read on
@@ -495,7 +675,8 @@
       </div>
       <p class="terms-note">"No Leftover" policy: any bottles unclaimed by the end of service are packaged and handed to
         the host — you keep every bottle in your paid package. Reservation requires a 30% non-refundable, transferable
-        downpayment; the remaining 70% is due on the event day prior to setup.</p>
+        downpayment; the remaining 70% is due on the event day prior to setup. Travel fees for venues outside Metro
+        Manila are estimated at booking and confirmed once your exact address is reviewed.</p>
     </div>
   </footer>
 
