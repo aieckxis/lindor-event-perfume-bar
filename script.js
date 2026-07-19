@@ -66,6 +66,23 @@
     if (parts.length !== 3) return v;
     return parts[1] + " . " + parts[2] + " . " + parts[0];
   }
+
+  /* Shrinks an SVG text element's font-size until it fits inside maxWidth,
+     so long names never spill past the label's gold border. */
+  function fitLabelText(el, maxWidth, startSize, minSize) {
+    if (!el || typeof el.getComputedTextLength !== 'function') return;
+    var size = startSize;
+    el.setAttribute('font-size', size);
+    try {
+      var len = el.getComputedTextLength();
+      while (len > maxWidth && size > minSize) {
+        size -= 0.5;
+        el.setAttribute('font-size', size);
+        len = el.getComputedTextLength();
+      }
+    } catch (e) { /* SVG not yet measurable; ignore */ }
+  }
+
   function updatePreview() {
     var n = namesInput.value.trim() || "Your Names";
     var d = formatDate(dateInput.value);
@@ -73,9 +90,15 @@
     prevDate.textContent = d;
     heroNames.textContent = n === "Your Names" ? "Gabriel & Sofia" : n;
     heroDate.textContent = d === "EVENT DATE" ? "10 . 24 . 2026" : d;
+    fitLabelText(heroNames, 54, 15, 8);
+    fitLabelText(prevNames, 66, 14, 8);
   }
   namesInput.addEventListener('input', updatePreview);
   dateInput.addEventListener('input', updatePreview);
+  updatePreview();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updatePreview);
+  }
 
   function currentSummary() {
     var lines = [

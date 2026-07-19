@@ -398,8 +398,15 @@ textarea:focus-visible {
   height: auto;
 }
 
-.foil-label-text {
+.foil-brand,
+.foil-date {
   font-family: 'Jost', sans-serif;
+}
+
+.foil-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .label-shimmer {
